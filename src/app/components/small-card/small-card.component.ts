@@ -11,6 +11,8 @@ export class SmallCardComponent implements OnInit {
   photoCover:string = "URL da foto"
   @Input()
   cardTitle:string ="Titulo da noticia"
+  @Input()
+  Id:string="0"
 
   constructor() { }
 
