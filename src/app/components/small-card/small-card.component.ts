@@ -8,8 +8,8 @@ import {dataFake} from '../../data/dataFake'
 })
 export class SmallCardComponent implements OnInit {
 
-  photoCover:string = "URL da foto1"
-  cardTitle:string ="Titulo da noticia"
+  photoCover:string = ""
+  cardTitle:string =""
   @Input()
   Id:string="0"
 
