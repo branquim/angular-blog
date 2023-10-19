@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {dataFake} from '../../data/dataFake'
 
 @Component({
   selector: 'app-small-card',
@@ -7,9 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SmallCardComponent implements OnInit {
 
-  @Input()
-  photoCover:string = "URL da foto"
-  @Input()
+  photoCover:string = "URL da foto1"
   cardTitle:string ="Titulo da noticia"
   @Input()
   Id:string="0"
@@ -17,6 +16,14 @@ export class SmallCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.setValuesToComponent(this.Id)
+  }
+
+  setValuesToComponent(id:string){
+    const result = dataFake.filter(article => article.id == id)[0]
+
+    this.cardTitle = result.title
+    this.photoCover = result.photoCover
   }
 
 }
